@@ -9,8 +9,12 @@ const logDBConnection = () => {
 };
 
 myEmitter.addListener('connected', logDBConnection);
-myEmitter.emit('connected');
 
+setInterval(() => {
+    myEmitter.emit('connected');
+    myEmitter.removeListener('connected', logDBConnection);
+    myEmitter.emit('connected');
+}, 2000)
 
 
 
