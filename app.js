@@ -1,8 +1,16 @@
-fs = require('fs');
+// Events
 
-const data = fs.readFileSync('./data.txt');
-console.log(data.toString());
+const EventEmitter = require('events');
 
-//console.log(global);
-//console.log(performance);
-console.log(module);
+const myEmitter = new EventEmitter();
+
+const logDBConnection = () => {
+    console.log('Connected');
+};
+
+myEmitter.addListener('connected', logDBConnection);
+myEmitter.emit('connected');
+
+
+
+
