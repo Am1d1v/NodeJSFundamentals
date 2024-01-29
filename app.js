@@ -5,7 +5,7 @@ const EventEmitter = require('events');
 const myEmitter = new EventEmitter();
 
 const logDBConnection = () => {
-    console.log('Connected');
+    console.log('DB connected');
 };
 
 myEmitter.addListener('connected', logDBConnection);
