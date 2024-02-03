@@ -22,6 +22,11 @@ myEmitter.on('msg', (data) => {
     console.log(`${data} Received`);
 })
 
+// prependListener
+myEmitter.prependListener('msg', () => {
+    console.log('Prepend Listener Data');
+});
+
 myEmitter.emit('msg', 'Some data');
 
 
@@ -40,3 +45,10 @@ myEmitter.setMaxListeners(15);
 
 // Get new value of Max Listeners
 console.log(myEmitter.getMaxListeners());
+
+// Count of Listeners
+console.log(myEmitter.listenerCount('msg'));
+console.log(myEmitter.listenerCount('off'));
+
+console.log(myEmitter.listeners('msg'));
+console.log(myEmitter.eventNames());
