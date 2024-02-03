@@ -30,3 +30,12 @@ myEmitter.once('off', () => {
 });
 myEmitter.emit('off');
 myEmitter.emit('off');
+
+// Get Max Listeners. Default Value of Max Listeners
+console.log(myEmitter.getMaxListeners());
+
+// Set Max Listeners
+myEmitter.setMaxListeners(15);
+
+// Get new value of Max Listeners
+console.log(myEmitter.getMaxListeners());
